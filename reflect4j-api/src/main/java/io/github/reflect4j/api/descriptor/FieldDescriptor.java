@@ -1,6 +1,5 @@
 package io.github.reflect4j.api.descriptor;
 
-import io.github.reflect4j.api.assertion.FieldAssertion;
 import io.github.reflect4j.api.invoke.FieldAccessResult;
 
 import java.lang.reflect.Field;
@@ -89,13 +88,4 @@ public interface FieldDescriptor extends MemberDescriptor<Field> {
     ///
     /// @return `true` if package-private, `false` otherwise
     boolean isPackagePrivate();
-
-    /// Returns an assertion view for this field descriptor.
-    ///
-    /// The returned [FieldAssertion] extends the base [io.github.reflect4j.api.assertion.Assertion]
-    /// contract with field-specific checks such as type, modifiers, and value access.
-    ///
-    /// @return the field assertion; never `null`
-    @Override
-    FieldAssertion toAssertion();
 }

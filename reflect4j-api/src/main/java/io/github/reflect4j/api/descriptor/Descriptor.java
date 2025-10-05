@@ -1,7 +1,5 @@
 package io.github.reflect4j.api.descriptor;
 
-import io.github.reflect4j.api.assertion.Assertion;
-
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
@@ -63,13 +61,6 @@ public interface Descriptor<T> {
     ///
     /// @return the wrapped reflection object, possibly `null`
     T unwrap();
-
-    /// Converts this descriptor into an [Assertion] for fluent assertion-style checks.
-    ///
-    /// For example, a [MethodDescriptor] would return a `MethodAssertion`,
-    ///
-    /// @return an `Assertion` corresponding to this descriptor; never `null`
-    Assertion<T> toAssertion();
 
     /// Returns an [Optional](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html) of the underlying element.
     ///

@@ -1,6 +1,5 @@
 package io.github.reflect4j.api.descriptor;
 
-import io.github.reflect4j.api.assertion.ConstructorAssertion;
 import io.github.reflect4j.api.invoke.ConstructorInvocationResult;
 
 import java.lang.reflect.Constructor;
@@ -85,15 +84,4 @@ public interface ConstructorDescriptor<T> extends MemberDescriptor<Constructor<T
     /// @return a [ConstructorInvocationResult] representing the outcome; never `null`
     /// @throws NullPointerException if args is `null`
     <R> ConstructorInvocationResult<R> invoke(Object... args);
-
-    /// Returns an assertion view for this constructor descriptor.
-    ///
-    /// The returned [ConstructorAssertion] extends the base
-    /// [io.github.reflect4j.api.assertion.Assertion] contract with
-    /// constructor-specific checks such as parameter count, modifiers,
-    /// and exception declarations.
-    ///
-    /// @return the constructor assertion; never `null`
-    @Override
-    ConstructorAssertion<T> toAssertion();
 }

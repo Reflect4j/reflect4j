@@ -1,6 +1,5 @@
 package io.github.reflect4j.api.descriptor;
 
-import io.github.reflect4j.api.assertion.MethodAssertion;
 import io.github.reflect4j.api.invoke.MethodInvocationResult;
 
 import java.lang.reflect.Method;
@@ -128,13 +127,4 @@ public interface MethodDescriptor extends MemberDescriptor<Method> {
     /// @return a [MethodInvocationResult] representing the outcome; never `null`
     /// @throws NullPointerException if args is `null`
     <R> MethodInvocationResult<R> invoke(Object target, Object... args);
-
-    /// Returns an assertion view for this method descriptor.
-    ///
-    /// The returned [MethodAssertion] extends the base [io.github.reflect4j.api.assertion.Assertion]
-    /// contract with method-specific checks such as return type, parameters, and modifiers.
-    ///
-    /// @return the method assertion; never `null`
-    @Override
-    MethodAssertion toAssertion();
 }
