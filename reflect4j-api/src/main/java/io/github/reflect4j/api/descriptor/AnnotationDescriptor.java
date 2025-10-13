@@ -1,7 +1,5 @@
 package io.github.reflect4j.api.descriptor;
 
-import io.github.reflect4j.api.assertion.AnnotationAssertion;
-
 import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.Map;
@@ -126,16 +124,6 @@ public interface AnnotationDescriptor<T extends Annotation> extends Descriptor<T
     ///
     /// @return an immutable map from attribute name to value; never `null`
     Map<String, Object> attributes();
-
-    /// Returns an assertion view over this annotation descriptor.
-    ///
-    /// The assertion view is type-safe and bound to the generic annotation
-    /// type `T`, ensuring that attribute values and type checks are
-    /// consistent with the descriptor's annotation.
-    ///
-    /// @return a non-`null` [AnnotationAssertion] bound to this descriptor
-    @Override
-    AnnotationAssertion<T> toAssertion();
 
     /// Casts the annotation type to the specified target type.
     ///

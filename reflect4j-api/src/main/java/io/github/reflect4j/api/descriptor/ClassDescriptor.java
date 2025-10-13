@@ -1,7 +1,5 @@
 package io.github.reflect4j.api.descriptor;
 
-import io.github.reflect4j.api.assertion.ClassAssertion;
-
 import java.util.List;
 
 /// # ClassDescriptor
@@ -184,15 +182,6 @@ public interface ClassDescriptor<T> extends AnnotatedElementDescriptor<Class<T>>
     ///
     /// @return an immutable list of interface descriptors; never `null`
     List<? extends ClassDescriptor<?>> getInterfaces();
-
-    /// Returns an assertion view for this class descriptor.
-    ///
-    /// Assertions provide a fluent API for verifying structural
-    /// and semantic properties of the class.
-    ///
-    /// @return the class assertion; never `null`
-    @Override
-    ClassAssertion<T> toAssertion();
 
     /// Casts this descriptor's underlying class to the specified target type.
     ///
